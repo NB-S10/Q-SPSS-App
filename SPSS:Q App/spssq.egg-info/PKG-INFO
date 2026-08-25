@@ -1,0 +1,22 @@
+Metadata-Version: 2.4
+Name: spssq
+Version: 0.1.0
+Summary: Survey analysis: crosstabs, RIM weighting, significance testing
+Requires-Python: >=3.12
+Requires-Dist: fastapi>=0.115
+Requires-Dist: uvicorn[standard]>=0.32
+Requires-Dist: jinja2>=3.1.4
+Requires-Dist: python-multipart>=0.0.12
+Requires-Dist: sqlmodel>=0.0.22
+Requires-Dist: pandas>=2.2
+Requires-Dist: numpy>=2.0
+Requires-Dist: pyarrow>=17.0
+Requires-Dist: openpyxl>=3.1
+Requires-Dist: scipy>=1.14
+Requires-Dist: statsmodels>=0.14
+Requires-Dist: scikit-learn>=1.5
+Requires-Dist: xlsxwriter>=3.2
+Requires-Dist: python-pptx>=1.0
+Provides-Extra: dev
+Requires-Dist: pytest>=8.3; extra == "dev"
+Requires-Dist: httpx>=0.27; extra == "dev"

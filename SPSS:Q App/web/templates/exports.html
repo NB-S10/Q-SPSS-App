@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}{{ active|capitalize }}{% endblock %}
+{% block heading %}{% for k, l, d, r in screens %}{% if k == active %}{{ l }}{% endif %}{% endfor %}{% endblock %}
+{% block subheading %}{% for k, l, d, r in screens %}{% if k == active %}{{ d }}{% endif %}{% endfor %}{% endblock %}
+{% block content %}
+<div class="empty">
+  <strong>Not built yet</strong>
+  This screen arrives last, once there are tables to export.
+</div>
+{% endblock %}

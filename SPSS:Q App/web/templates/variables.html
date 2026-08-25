@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}Variables{% endblock %}
+{% block heading %}Variables{% endblock %}
+{% block subheading %}Check and correct what the importer inferred{% endblock %}
+{% block content %}
+
+<div class="card" id="vars-card">
+  <div class="row" style="margin-bottom:14px">
+    <div>
+      <label for="dataset-select">Dataset</label>
+      <select id="dataset-select"></select>
+    </div>
+    <div>
+      <label for="kind-filter">Show</label>
+      <select id="kind-filter">
+        <option value="analysable">Analysable questions</option>
+        <option value="all">Everything, including metadata and free text</option>
+        <option value="unordered">Needing a category order</option>
+        <option value="flagged">Only flagged</option>
+      </select>
+    </div>
+    <div>
+      <label for="search">Search</label>
+      <input type="text" id="search" placeholder="ethnic, trust, 481…" size="22">
+    </div>
+    <div class="spacer"></div>
+    <div class="note" id="var-count"></div>
+  </div>
+  <div id="vars-body">
+    <div class="empty"><strong>No dataset loaded</strong>Upload one on the Data screen first.</div>
+  </div>
+</div>
+
+{% endblock %}
+{% block scripts %}<script type="module" src="/static/js/views/variables.js"></script>{% endblock %}

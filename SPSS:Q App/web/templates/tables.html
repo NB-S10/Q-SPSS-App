@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+{% block title %}Tables{% endblock %}
+{% block heading %}Tables{% endblock %}
+{% block subheading %}Build a banner and read the crosstab{% endblock %}
+{% block content %}
+
+<div class="tables-layout">
+
+  <aside class="card panel">
+    <h2>Variables</h2>
+    <input type="text" id="var-search" placeholder="Search questions…" style="width:100%">
+    <div id="var-tree" class="var-tree"></div>
+  </aside>
+
+  <section class="card table-main">
+    <div class="chips">
+      <div class="chip-row">
+        <span class="chip-label">Rows</span>
+        <div id="row-chips" class="chip-set"><span class="note">Pick a question on the left</span></div>
+      </div>
+      <div class="chip-row">
+        <span class="chip-label">Columns</span>
+        <div id="banner-chips" class="chip-set"><span class="note">Total only</span></div>
+      </div>
+      <div class="chip-row">
+        <span class="chip-label">Filter</span>
+        <div id="filter-chips" class="chip-set"><span class="note">None</span></div>
+      </div>
+      <div id="cat-picker" class="cat-picker hidden"></div>
+    </div>
+    <div id="table-notices"></div>
+    <div id="table-output">
+      <div class="empty"><strong>No table yet</strong>Choose a row variable to begin.</div>
+    </div>
+  </section>
+
+  <aside class="card panel">
+    <h2>Setup</h2>
+    <label for="dataset-select">Dataset</label>
+    <select id="dataset-select" style="width:100%"></select>
+
+    <label for="weight-select" style="margin-top:12px">Weight</label>
+    <select id="weight-select" style="width:100%">
+      <option value="column">Weighted</option>
+      <option value="unweighted">Unweighted</option>
+    </select>
+
+    <label for="stat-select" style="margin-top:12px">Show</label>
+    <select id="stat-select" style="width:100%">
+      <option value="col_pct">Column %</option>
+      <option value="row_pct">Row %</option>
+      <option value="index">Index vs total</option>
+      <option value="count">Weighted count</option>
+      <option value="count_unweighted">Unweighted count</option>
+    </select>
+
+    <label for="sort-select" style="margin-top:12px">Sort rows</label>
+    <select id="sort-select" style="width:100%">
+      <option value="question">Question order</option>
+      <option value="desc">Highest first</option>
+      <option value="asc">Lowest first</option>
+    </select>
+    <p class="note" style="font-size:0.7188rem;margin:5px 0 0">
+      Sorts on the highlighted column. Click a column heading to sort on that
+      one instead, or drag a row label to set the order by hand.
+    </p>
+
+    <label for="base-select" style="margin-top:12px">Base</label>
+    <select id="base-select" style="width:100%">
+      <option value="valid">Exclude missing codes</option>
+      <option value="total">Everyone</option>
+    </select>
+
+    <label for="heat-scope" style="margin-top:12px">Conditional formatting</label>
+    <select id="heat-scope" style="width:100%"></select>
+    <div id="heat-key"></div>
+
+    <div id="setup-summary" style="margin-top:16px"></div>
+  </aside>
+
+</div>
+{% endblock %}
+{% block scripts %}<script type="module" src="/static/js/views/tables.js"></script>{% endblock %}

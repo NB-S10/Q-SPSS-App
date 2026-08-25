@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Weighting{% endblock %}
+{% block heading %}Weighting{% endblock %}
+{% block subheading %}Which weight your tables run on{% endblock %}
+{% block content %}
+
+<div class="card">
+  <div class="row" style="margin-bottom:14px">
+    <div>
+      <label for="dataset-select">Dataset</label>
+      <select id="dataset-select"></select>
+    </div>
+  </div>
+  <div id="weight-body">
+    <div class="empty"><strong>No dataset loaded</strong>Upload one on the Data screen first.</div>
+  </div>
+</div>
+
+{% endblock %}
+{% block scripts %}<script type="module" src="/static/js/views/weighting.js"></script>{% endblock %}

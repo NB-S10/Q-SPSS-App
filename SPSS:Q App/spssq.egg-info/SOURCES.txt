@@ -1,0 +1,9 @@
+pyproject.toml
+app/__init__.py
+app/core/__init__.py
+app/routers/__init__.py
+spssq.egg-info/PKG-INFO
+spssq.egg-info/SOURCES.txt
+spssq.egg-info/dependency_links.txt
+spssq.egg-info/requires.txt
+spssq.egg-info/top_level.txt

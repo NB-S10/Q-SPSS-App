@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Survey analysis{% endblock %}</title>
+  <link rel="stylesheet" href="/static/css/app.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="mark"></span>Survey analysis</div>
+    <nav>
+      {% for key, label, _desc, ready in screens %}
+        {% if ready %}
+          <a href="/{{ key }}" class="{{ 'active' if key == active else '' }}">{{ label }}</a>
+        {% else %}
+          <a href="/{{ key }}" class="disabled {{ 'active' if key == active else '' }}"
+             title="Not built yet">{{ label }}</a>
+        {% endif %}
+      {% endfor %}
+    </nav>
+    <div class="context" id="context-bar"></div>
+    <div class="text-size">
+      <button id="text-smaller" title="Smaller text" aria-label="Smaller text">&minus;</button>
+      <span id="text-size-value">15</span>
+      <button id="text-bigger" title="Larger text" aria-label="Larger text">+</button>
+    </div>
+  </header>
+  <main>
+    <div class="page-head">
+      <h1>{% block heading %}{% endblock %}</h1>
+      <p>{% block subheading %}{% endblock %}</p>
+    </div>
+    {% block content %}{% endblock %}
+  </main>
+  <script type="module" src="/static/js/app.js"></script>
+  {% block scripts %}{% endblock %}
+</body>
+</html>
